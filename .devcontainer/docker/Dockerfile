@@ -2,7 +2,7 @@
 ARG VARIANT=6.0-bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/dotnet:0-${VARIANT}
 
-RUN apt-get update && apt-get install -y build-essential g++ mariadb-client
+RUN apt-get update && apt-get install -y build-essential g++ mariadb-client redis-tools
 
 ENV PATH $PATH:/home/vscode/.dotnet/tools
 

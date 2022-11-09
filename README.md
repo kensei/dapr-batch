@@ -12,16 +12,22 @@ batch job system by dapr
 
 ## setup
 
+1. open vscore remote container
+1. exec vscode terminal `dotnet restore`
+
 ## migration
+
+```
+```
 
 ## run
 
 ```
-cd batch
-dapr run --app-id batch --app-port 5001 --placement-host-address dapr-placement:50010 --components-path $HOME/.dapr/components --log-level info -- dotnet run
+dapr run --app-id dapr-batch --app-port 5000 --placement-host-address dapr-placement:50010 --components-path $HOME/.dapr/components --log-level info -- dotnet run --project batch/batch.csproj
 ```
 
 ## useage
 
-``:
+```
+dapr publish --publish-app-id dapr-batch --pubsub batch-param --topic params --data '{"JobName": "A"}'
 ```

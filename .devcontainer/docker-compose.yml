@@ -14,6 +14,7 @@ services:
     ports:
       - 5000:5000
       - 5001:5001
+      - 9411:9411
     volumes:
       - /var/run/docker.sock:/var/run/docker-host.sock
     entrypoint: /usr/local/share/docker-init.sh
