@@ -15,11 +15,6 @@ batch job system by dapr
 1. open vscore remote container
 1. exec vscode terminal `dotnet restore`
 
-## migration
-
-```
-```
-
 ## run
 
 ```
