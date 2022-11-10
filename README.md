@@ -24,8 +24,8 @@ dapr run --app-id dapr-batch --app-port 5000 --placement-host-address dapr-place
 ## useage
 
 ```
-dapr publish --publish-app-id dapr-batch --pubsub batch-param --topic job-a-params --data '{"Order": 1}'
-dapr publish --publish-app-id dapr-batch --pubsub batch-param --topic job-b-params --data '{}'
-dapr publish --publish-app-id dapr-batch --pubsub batch-param --topic job-c-params --data '{}'
-dapr publish --publish-app-id dapr-batch --pubsub batch-param --topic job-d-params --data '{}'
+curl -d @test/job-a-params.json -H "Content-Type: application/json" http://localhost:5000/JobEnqueueA
+curl -d @test/job-empty-params.json -H "Content-Type: application/json" http://localhost:5000/JobEnqueueB
+curl -d @test/job-empty-params.json -H "Content-Type: application/json" http://localhost:5000/JobEnqueueC
+curl -d @test/job-empty-params.json -H "Content-Type: application/json" http://localhost:5000/JobEnqueueD
 ```
