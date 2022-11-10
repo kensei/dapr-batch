@@ -10,15 +10,29 @@ app.UseCloudEvents();
 
 app.MapSubscribeHandler();
 
-app.MapPost("jobexecute", [Topic("batch-param", "params")] ([FromBody] BatchParams param) => {
-    Console.WriteLine($"jobexecute params:{param.JobName}");
+app.MapPost("jobexecute-a", [Topic("batch-param", "job-a-params")] ([FromBody] JobAParams param) => {
+    Console.WriteLine($"jobexecute A. params:{param.Order}");
     return Results.Ok();
+});
+
+app.MapPost("jobexecute-b", [Topic("batch-param", "job-b-params")] ([FromBody] EmptyJobParams param) => {
+    Console.WriteLine($"jobexecute B. param is empty");
+    return Results.Ok();
+});
+
+app.MapPost("jobexecute-c", [Topic("batch-param", "job-c-params")] ([FromBody] EmptyJobParams param) => {
+    Console.WriteLine($"jobexecute C. job is fail");
+    return Results.Problem("job is fail");
 });
 
 Console.WriteLine("run app!");
 app.Run();
 
-class BatchParams
+class JobAParams
 {
-    public string JobName { get; init; }
+    public int Order { get; set; }
+}
+
+class EmptyJobParams
+{
 }
