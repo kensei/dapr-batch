@@ -15,6 +15,15 @@ batch job system by dapr
 1. open vscore remote container
 1. exec vscode terminal `dotnet restore`
 
+## migrate
+
+mysql password is docker-compose.yml
+
+```
+mysql -uroot -p -hdapr-batch_devcontainer_mysql_1 < .devcontainer/docker/mysql/initdb.d/0_create_database.sql
+mysql -uroot -p -hdapr-batch_devcontainer_mysql_1 test < .devcontainer/docker/mysql/initdb.d/1_create_table.sql 
+```
+
 ## run
 
 ```
