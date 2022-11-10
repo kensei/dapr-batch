@@ -11,11 +11,11 @@ namespace DaprBatch.Batch
                 case EnumBatchJob.JobA:
                     return new JobA();
                 case EnumBatchJob.JobB:
-                    return new JobA();
+                    return new JobB();
                 case EnumBatchJob.JobC:
-                    return new JobA();
+                    return new JobC();
                 case EnumBatchJob.JobD:
-                    return new JobA();
+                    return new JobD();
                 default:
                     throw new NotImplementedException();
             }

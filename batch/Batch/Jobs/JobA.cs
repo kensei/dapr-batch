@@ -9,9 +9,9 @@ namespace DaprBatch.Batch.Jobs
 
     public class JobA : AbstractJobBase<JobAParams>
     {
-        protected override Task<IJobResult> Execute(JobAParams jobParamJson)
+        protected override async Task<IJobResult> Execute(JobAParams jobParamJson)
         {
-            return Task.FromResult<IJobResult>(new JobSuccessResult() { BatchJob = EnumBatchJob.JobA });
+            return await Task.FromResult<IJobResult>(new JobSuccessResult() { BatchJob = EnumBatchJob.JobA });
         }
     }
 }

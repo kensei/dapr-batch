@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "ms-vscode-remote.remote-containers",
+        "editorconfig.editorconfig",
+        "xaver.clang-format",
+        "k--kato.docomment"
+    ],
+    "unwantedRecommendations": []
+}
