@@ -2,7 +2,7 @@ namespace DaprBatch.Batch.Jobs
 {
     public class JobD : AbstractJobBase<EmptyJobParam>
     {
-        protected override async Task<IJobResult> Execute(EmptyJobParam jobParamJson)
+        protected override async Task<IJobResult> Execute(BatchContext context, EmptyJobParam jobParamJson)
         {
             for (var i = 0; i < 10; i++)
             {

@@ -9,15 +9,16 @@ namespace DaprBatch.Batch
             try
             {
                 var param = JsonSerializer.Deserialize<T>(jobParamJson)!;
-                var result = await Execute(param);
+                var context = new BatchContext();
+                var result = await Execute(context, param);
                 return result;
             }
             catch (Exception e)
             {
-                return new JobFailResult(){ Message = e.Message };
+                return new JobFailResult() { Message = e.Message };
             }
         }
 
-        protected abstract Task<IJobResult> Execute(T jobParamJson);
+        protected abstract Task<IJobResult> Execute(BatchContext context, T jobParamJson);
     }
 }
